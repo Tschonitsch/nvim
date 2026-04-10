@@ -21,12 +21,7 @@ require("lazy").setup({
     end
   },
 
-  { "goolord/alpha-nvim", dependencies = { "nvim-mini/mini.icons", "nvim-lua/plenary.nvim" },
-    config = function()
-      require("alpha").setup(require("alpha.themes.theta").config)
-    end
-  },
-
+  { "goolord/alpha-nvim", dependencies = { "nvim-mini/mini.icons", "nvim-lua/plenary.nvim" } },
   { "ThePrimeagen/harpoon" },
   { "nvim-tree/nvim-web-devicons" },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -56,3 +51,4 @@ require("plugins.lualine")
 require("plugins.telescope")
 require("plugins.neo-tree")
 require("plugins.cmp")
+require("plugins.alpha")
