@@ -20,7 +20,8 @@ require("lazy").setup({
       vim.cmd.colorscheme("everforest")
     end
   },
-
+  { "stevearc/conform.nvim", opts = {},},
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", },
   { "goolord/alpha-nvim", dependencies = { "nvim-mini/mini.icons", "nvim-lua/plenary.nvim" } },
   { "ThePrimeagen/harpoon" },
   { "nvim-tree/nvim-web-devicons" },
@@ -44,7 +45,26 @@ require("lazy").setup({
   { "saadparwaiz1/cmp_luasnip" },
 }, { root = vim.fn.stdpath("config") .. "/lazy" })
 
--- ---------- Konfigurationen ----------
+-- ---------- Configs ----------
+
+require("conform").setup({
+  format_on_save = {
+    timeout_ms = 500,
+  },
+  formatters_by_ft = {
+    lua = { "stylua" },
+    python = { "black" },
+    javascript = { "prettier" },
+  },
+})
+require("ibl").setup({
+  scope = {
+    enabled = true,
+    show_start = true,
+    show_end = true,
+  },
+})
+
 require("core.keybinds")
 require("core.options")
 require("plugins.lualine")

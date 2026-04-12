@@ -17,3 +17,11 @@ vim.keymap.set('n', "<leader>tx", "<cmd>tabclose<CR>")
 vim.keymap.set('n', "<leader>tn", "<cmd>tabn<CR>")
 vim.keymap.set('n', "<leader>tp", "<cmd>tabp<CR>")
 vim.keymap.set('n', "<leader>tf", "<cmd>tabnew %<CR>")
+
+
+vim.keymap.set('n', "<leader>jn", "<cmd>java_new <CR>")
+
+
+vim.keymap.set('v', "<", "<gv", opts)
+vim.keymap.set('v', ">", ">gv", opts)
+
