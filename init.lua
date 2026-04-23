@@ -20,6 +20,7 @@ require("lazy").setup({
       vim.cmd.colorscheme("everforest")
     end
   },
+  { "akinsho/toggleterm.nvim" },
   { "stevearc/conform.nvim", opts = {},},
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", },
   { "goolord/alpha-nvim", dependencies = { "nvim-mini/mini.icons", "nvim-lua/plenary.nvim" } },
@@ -64,9 +65,9 @@ require("ibl").setup({
     show_end = true,
   },
 })
-
 require("core.keybinds")
 require("core.options")
+require("plugins.toggleterm")
 require("plugins.lualine")
 require("plugins.telescope")
 require("plugins.neo-tree")
