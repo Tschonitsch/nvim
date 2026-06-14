@@ -1,0 +1,1 @@
+You need to install my [matugen config](https://github.com/Tschonitsch/matugen) for the theme to work.
