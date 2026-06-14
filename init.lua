@@ -14,12 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- ---------- Plugins ----------
 require("lazy").setup({
-  { "neanias/everforest-nvim", priority = 1000,
-    config = function()
-      require("everforest").setup({ background = "medium" })
-      vim.cmd.colorscheme("everforest")
-    end
-  },
   { "akinsho/toggleterm.nvim" },
   { "stevearc/conform.nvim", opts = {},},
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", },
@@ -45,6 +39,28 @@ require("lazy").setup({
   { "L3MON4D3/LuaSnip" },
   { "saadparwaiz1/cmp_luasnip" },
 }, { root = vim.fn.stdpath("config") .. "/lazy" })
+
+-- ---------- Matugen Theme ----------
+local function source_matugen()
+  local path = os.getenv("HOME") .. "/.config/nvim/generated.lua"
+  local f = io.open(path, "r")
+  if f then
+    io.close(f)
+    dofile(path)
+  else
+    vim.cmd("colorscheme habamax")
+  end
+end
+
+source_matugen()
+
+vim.api.nvim_create_autocmd("Signal", {
+  pattern = "SIGUSR1",
+  callback = function()
+    package.loaded["matugen-theme"] = nil
+    source_matugen()
+  end,
+})
 
 -- ---------- Configs ----------
 
