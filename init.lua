@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- ---------- Plugins ----------
 require("lazy").setup({
+	{ "akinsho/bufferline.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "akinsho/toggleterm.nvim" },
 	{ "stevearc/conform.nvim", opts = {} },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
@@ -83,6 +84,8 @@ require("ibl").setup({
 		show_end = true,
 	},
 })
+
+require("plugins.bufferline")
 require("core.diagnostic")
 require("plugins.cmp")
 require("plugins.alpha")

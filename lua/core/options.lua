@@ -1,8 +1,10 @@
 vim.cmd("let g:netrw_banner = 0")
 
-vim.opt.guicursor = "" 
+vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+vim.opt.termguicolors = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -19,7 +21,6 @@ vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
-vim.opt.smartcase =  true
+vim.opt.smartcase = true
 
 vim.opt.clipboard:append("unnamedplus")
-

@@ -12,13 +12,16 @@ vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>")
 
 vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle<cr>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>")
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>")
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>")
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>")
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>")
+vim.keymap.set("n", "<leader>tl", "<cmd>tabn<CR>")
+vim.keymap.set("n", "<leader>th", "<cmd>tabp<CR>")
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>")
-
-vim.keymap.set("n", "<leader>jn", "<cmd>java_new <CR>")
 
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
+
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], {
+	noremap = true,
+	silent = true,
+})
