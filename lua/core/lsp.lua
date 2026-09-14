@@ -1,6 +1,14 @@
+--     _       ______  _____
+--    | |     /  ___| | ___ \
+--    | |     \ `--.  | |_/ /
+--    | |      `--. \ |  __/
+--    | |____ /\__/ / | |
+--    \_____/ \____/  \_|
+
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local servers = {
+	clangd = {},
 	html = {},
 	cssls = {},
 	vtsls = {},
@@ -10,6 +18,19 @@ local servers = {
 	jdtls = {},
 	pyright = {},
 	marksman = {},
+	qmlls = {
+		cmd = {
+			"qmlls",
+			"-I",
+			"/usr/lib/qt6/qml",
+			"/usr/share/licenses/quickshell",
+		},
+		filetypes = { "qml" },
+		root_markers = {
+			".git",
+			"CMakeLists.txt",
+		},
+	},
 	lua_ls = {
 		settings = {
 			Lua = {
@@ -17,11 +38,14 @@ local servers = {
 					version = "LuaJIT",
 				},
 				workspace = {
-					library = vim.api.nvim_get_runtime_file("", true),
+					library = {
+						vim.api.nvim_get_runtime_file("", true),
+						"/usr/share/hypr/stubs",
+					},
 					checkThirdParty = false,
 				},
 				diagnostics = {
-					globals = { "vim" },
+					globals = { "vim", "hl", "opts" },
 				},
 			},
 		},
