@@ -18,4 +18,15 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+-- Info on hover
+vim.o.updatetime = 2000 -- time in ms
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float(nil, {
+			focusable = false,
+			scope = "cursor",
+		})
+	end,
+})
 -- ---------- Diagnostic ----------

@@ -24,7 +24,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("v", "  Neovim Config", ":e ~/.config/nvim/ <CR>"),
 	dashboard.button("h", "  Hyprland Config", ":e ~/.config/hypr/ <CR>"),
 	dashboard.button("s", "  Quickshell Config", ":e ~/.config/quickshell/ <CR>"),
-	dashboard.button("u", "  Update Nvim Plugins", ":Lazy sync<CR>"),
+	dashboard.button("u", "  Update Nvim Plugins", ":Lazy update<CR>"),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 -- ---------- Sortcuts ----------

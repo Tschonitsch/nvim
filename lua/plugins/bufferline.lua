@@ -16,6 +16,8 @@ require("bufferline").setup({
 	-- ---------- Options ----------
 	options = {
 		mode = "buffers",
+		themable = true,
+		show_duplicate_prefix = true,
 		separator_style = "slant",
 		always_show_bufferline = true,
 		diagnostics = "nvim_lsp",
@@ -25,6 +27,11 @@ require("bufferline").setup({
 		show_buffer_close_icons = true,
 		show_close_icon = false,
 		-- ---------- Icons ----------
+
+		indicator = {
+			icon = "▎", -- this should be omitted if indicator style is not 'icon'
+			style = "underline",
+		},
 
 		-- ---------- Hover ----------
 		hover = {
@@ -48,9 +55,9 @@ require("bufferline").setup({
 	-- ---------- Options ----------
 
 	-- ---------- Highlights ----------
-	-- nothing at the bottom all just highlights
 	highlights = {
 
+		-- ---------- Main ----------
 		fill = {
 			fg = tabline.fg,
 			bg = tabline.bg,
@@ -71,8 +78,44 @@ require("bufferline").setup({
 			bg = tabline_sel.bg,
 			bold = true,
 		},
+		-- ---------- Main ----------
 
-		-- wichtig für slant
+		-- ---------- Duplicate Buffers ----------
+		duplicate = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		duplicate_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		duplicate_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+		},
+		-- ---------- Duplicate Buffers ----------
+
+		-- ---------- Modified ----------
+		modified = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		modified_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		modified_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Modified ----------
+
+		-- ---------- Separators ----------
 		separator = {
 			fg = tabline.bg,
 			bg = tabline.bg,
@@ -84,10 +127,12 @@ require("bufferline").setup({
 		},
 
 		separator_selected = {
-			bg = tabline_sel.bg,
 			fg = tabline.bg,
+			bg = tabline_sel.bg,
 		},
+		-- ---------- Separators ----------
 
+		-- ---------- Close Buttons ----------
 		close_button = {
 			fg = tabline.fg,
 			bg = tabline.bg,
@@ -102,6 +147,45 @@ require("bufferline").setup({
 			fg = tabline_sel.fg,
 			bg = tabline_sel.bg,
 		},
+		-- ---------- Close Buttons ----------
+
+		-- ---------- Numbers ----------
+		numbers = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		numbers_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		numbers_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Numbers ----------
+
+		-- ---------- Diagnostics ----------
+		diagnostic = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		diagnostic_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		diagnostic_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Diagnostics ----------
+
+		-- ---------- Error ----------
 		error = {
 			fg = tabline.fg,
 			bg = tabline.bg,
@@ -118,6 +202,24 @@ require("bufferline").setup({
 			bold = true,
 		},
 
+		error_diagnostic = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		error_diagnostic_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		error_diagnostic_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Error ----------
+
+		-- ---------- Warning ----------
 		warning = {
 			fg = tabline.fg,
 			bg = tabline.bg,
@@ -134,6 +236,24 @@ require("bufferline").setup({
 			bold = true,
 		},
 
+		warning_diagnostic = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		warning_diagnostic_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		warning_diagnostic_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Warning ----------
+
+		-- ---------- Info ----------
 		info = {
 			fg = tabline.fg,
 			bg = tabline.bg,
@@ -150,6 +270,24 @@ require("bufferline").setup({
 			bold = true,
 		},
 
+		info_diagnostic = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		info_diagnostic_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		info_diagnostic_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Info ----------
+
+		-- ---------- Hint ----------
 		hint = {
 			fg = tabline.fg,
 			bg = tabline.bg,
@@ -166,21 +304,93 @@ require("bufferline").setup({
 			bold = true,
 		},
 
-		modified = {
+		hint_diagnostic = {
 			fg = tabline.fg,
 			bg = tabline.bg,
 		},
 
-		modified_visible = {
+		hint_diagnostic_visible = {
 			fg = tabline.fg,
 			bg = tabline.bg,
 		},
 
-		modified_selected = {
+		hint_diagnostic_selected = {
 			fg = tabline_sel.fg,
 			bg = tabline_sel.bg,
 			bold = true,
 		},
+		-- ---------- Hint ----------
+
+		-- ---------- Indicator ----------
+		indicator_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		indicator_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Indicator ----------
+
+		-- ---------- Pick ----------
+		pick = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		pick_visible = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		pick_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+		-- ---------- Pick ----------
+
+		-- ---------- Tabs ----------
+		tab = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+
+		tab_selected = {
+			fg = tabline_sel.fg,
+			bg = tabline_sel.bg,
+			bold = true,
+		},
+
+		tab_separator = {
+			fg = tabline.bg,
+			bg = tabline.bg,
+		},
+
+		tab_separator_selected = {
+			fg = tabline.bg,
+			bg = tabline_sel.bg,
+		},
+
+		tab_close = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+		-- ---------- Tabs ----------
+
+		-- ---------- Misc ----------
+		offset_separator = {
+			fg = tabline.bg,
+			bg = tabline.bg,
+		},
+
+		trunc_marker = {
+			fg = tabline.fg,
+			bg = tabline.bg,
+		},
+		-- ---------- Misc ----------
 	},
 	-- ---------- Highlights ----------
 })
