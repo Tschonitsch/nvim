@@ -17,12 +17,12 @@ vim.opt.smartindent = true -- Smart automatic indentation
 -- ---------- Indentation ----------
 
 -- ---------- Transparent Background ----------
-vim.api.nvim_set_hl(0, "FloatBorder", {
-	bg = "NONE",
-})
-vim.api.nvim_set_hl(0, "NormalFloat", {
-	bg = "NONE",
-})
+-- vim.api.nvim_set_hl(0, "FloatBorder", {
+-- 	bg = "NONE",
+-- })
+-- vim.api.nvim_set_hl(0, "NormalFloat", {
+-- 	bg = "NONE",
+-- })
 -- ---------- Transparent Background ----------
 
 -- ---------- Other ----------
@@ -36,6 +36,8 @@ vim.opt.wrap = false
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 vim.opt.swapfile = false
 vim.opt.backup = false

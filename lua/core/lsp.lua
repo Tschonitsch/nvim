@@ -8,7 +8,6 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local servers = {
-	clangd = {},
 	html = {},
 	cssls = {},
 	vtsls = {},
@@ -18,6 +17,22 @@ local servers = {
 	jdtls = {},
 	pyright = {},
 	marksman = {},
+	clangd = {},
+	arduino_language_server = {
+		cmd = {
+			"arduino-language-server",
+			"-cli",
+			"/usr/sbin/arduino-cli",
+			"-cli-config",
+			vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
+			"-fqbn",
+			"arduino:avr:uno",
+			"-clangd",
+			vim.fn.expand("~/.local/share/nvim/mason/bin/clangd"),
+		},
+		filetypes = { "arduino" },
+		root_markers = { "sketch.yaml", ".git" },
+	},
 	qmlls = {
 		cmd = {
 			"qmlls",

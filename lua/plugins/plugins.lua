@@ -8,6 +8,7 @@
 --                   |___/                                   |___/
 
 -- ---------- Requires ----------
+require("plugins.neoscroll") -- better mouse scroll
 require("plugins.flash") -- better search (f)
 require("plugins.colorizer") -- hexcode colors
 require("plugins.autopairs") -- "", (), {}, []

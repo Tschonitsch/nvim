@@ -31,11 +31,28 @@ cmp.setup({
 
 	-- ---------- Sources ----------
 	sources = {
+		{ name = "nvim_lsp" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 	},
 	-- ---------- Sources ----------
+
+	-- ---------- Command-line Completion ----------
+	cmp.setup.cmdline(":", {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = {
+			{ name = "path" },
+			{ name = "cmdline" },
+		},
+	}),
+
+	cmp.setup.cmdline("/", {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = {
+			{ name = "buffer" },
+		},
+	}),
+	-- ---------- Command-line Completion ----------
 })
 -- ---------- Config ----------

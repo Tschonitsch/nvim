@@ -10,6 +10,7 @@
 require("lazy").setup({
 
 	-- ---------- UI & Appearance ----------
+
 	-- Startup dashboard
 	{ "goolord/alpha-nvim", dependencies = { "nvim-mini/mini.icons", "nvim-lua/plenary.nvim" } },
 
@@ -30,6 +31,10 @@ require("lazy").setup({
 	-- ---------- UI & Appearance ----------
 
 	-- ---------- Navigation & Search ----------
+
+	-- Better mouse scrolling.
+	{ "karb94/neoscroll.nvim" },
+
 	-- Fuzzy finder for files, text, buffers, etc.
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 
@@ -72,6 +77,8 @@ require("lazy").setup({
 
 	-- File and path completion
 	{ "hrsh7th/cmp-path" },
+
+	{ "hrsh7th/cmp-cmdline" },
 
 	-- LuaSnip completion source
 	{ "saadparwaiz1/cmp_luasnip" },
